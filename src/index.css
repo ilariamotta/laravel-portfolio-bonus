@@ -1,111 +1,203 @@
+/* VARIABILI GLOBALI PALETTE */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --blackWarm: #211A1D;
+  --pink: #E89898;
+  --lilac: #C9C7FF;
+  --bgSoft: #EEF4F7;
+  --butter: #FFF1AD;
+  --mint: #AEEBE6;
+  --white: #ffffff;
+  --textSoft: #5c5560;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* RESET */
+* {
+  box-sizing: border-box;
+}
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--blackWarm);
+  color: var(--blackWarm);
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+a {
+  text-decoration: none;
+}
+
+.homepage-main {
+  background-color: var(--bgSoft);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.site-header {
+  background: linear-gradient(135deg, #151217 0%, #211A1D 45%, #3b2f4a 72%, #C9C7FF 100%);
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+/* Nome / brand principale */
+.site-brand {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--lilac);
+}
+
+/* Sottotitolo sotto il nome */
+.site-subtitle {
+  color: var(--lilac);
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+/* HEADER NAVBAR */
+
+.nav-list {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
+  gap: 1.4rem;
+  padding: 0;
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* Link normali della navbar */
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: 0.2s ease;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* Hover testo link */
+.nav-list a:hover {
+  color: var(--lilac);
+}
+
+/* Lineetta animata sotto i link */
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 0;
+  height: 2px;
+  background-color: var(--lilac);
+  transition: width 0.25s ease;
+}
+
+/* Espansione lineetta al passaggio del mouse */
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+/* ONDA */
+.header-wave {
+  line-height: 0;
+  margin-top: 0.5rem;
+}
+
+.header-wave svg {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+/* TITOLI SEZIONE */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* CARD PROGETTI */
+.project-card {
+  background-color: var(--white);
+  border-radius: 1.7rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(33, 26, 29, 0.06);
+  border: 1px solid rgba(33, 26, 29, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titolo dentro la card */
+.project-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+/* Testo cliente nella card */
+.project-card-customer {
+  color: var(--blackWarm);
+}
+
+/* BADGE */
+
+/* Badge del type */
+.project-type-badge {
+  background-color: var(--lilac);
+  color: var(--blackWarm);
+}
+
+/* Badge delle tecnologie */
+.tech-badge {
+  background-color: var(--mint);
+  color: var(--blackWarm);
+}
+
+/* BOTTONI */
+
+.custom-btn {
+  background-color: var(--pink);
+  color: var(--blackWarm);
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+/* Hover bottone */
+.custom-btn:hover {
+  background-color: var(--lilac);
+  color: var(--blackWarm);
+}
+
+
+/* PAGINA DETTAGLI PROGETTO */
+
+.detail-card {
+  max-width: 850px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(33, 26, 29, 0.06);
+  border: 1px solid rgba(33, 26, 29, 0.06);
+}
+
+/* Titolo principale della pagina dettaglio */
+.detail-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Sottotitoli interni tipo "Descrizione", "Tecnologie" */
+.detail-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
