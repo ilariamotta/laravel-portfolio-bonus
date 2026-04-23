@@ -142,11 +142,13 @@ a {
 
 /* Badge del type */
 .project-type-badge {
+  display: inline-block;
   background-color: var(--lilac);
   color: var(--blackWarm);
   border-radius: 50px;
   padding: 2px 8px;
 }
+
 
 /* Badge delle tecnologie */
 .tech-badge {
