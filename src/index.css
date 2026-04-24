@@ -177,12 +177,14 @@ a {
   padding: 0.5rem 1rem;
   font-weight: 600;
   transition: 0.25s ease;
+  text-decoration: none;
 }
 
 /* Hover bottone */
 .custom-btn:hover {
   background-color: var(--lilac);
   color: var(--blackWarm);
+  text-decoration: none;
 }
 
 .btn-projects {

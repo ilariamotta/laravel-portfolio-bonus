@@ -55,9 +55,11 @@ export default function ProjectDetailPage() {
           </div>
         </div>
       </div>
-      <Link className=" btn-projects" to="/projects">
+      <div className="d-flex justify-content-center mt-4">
+      <Link className="btn-projects" to="/">
         Torna ai progetti
       </Link>
+      </div>
     </main>
   )
 }
